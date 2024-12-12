@@ -5,11 +5,16 @@
   "scripts": {
     "start": "node hello.js"
   },
-  "author": "",
+  "author": "mvl",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^4.21.2",
     "nodemon": "^3.1.7"
-  }
+  },
+  "devDependencies": {},
+  "description": "Test Node.js App",
+  "keywords": [
+    "test",
+    "nodejs"
+  ]
 }
