@@ -13,5 +13,11 @@ myEvent.on('fileEmit',()=>{
         console.log("file Write Successfully!");
         }
     });
+    fs.appendFile(fileName,'\nAppended',(err)=>{
+        if (err)
+            console.log(err);
+        else
+        console.log("Appended!");
+    });
 });
 myEvent.emit('fileEmit');
