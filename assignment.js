@@ -3,8 +3,8 @@
 // 30 29 28
 // 20 19 18 17
 // 10 9  8  7  6
-let data = 50;
-let dec1 = 10;
+let data = 100;
+let dec1 = 20;
 let dec2 = 1;
 
 for (let i = 0; i < 5; i++) {
@@ -18,7 +18,7 @@ for (let i = 0; i < 5; i++) {
                 break;
             default:
                 tempData -= dec2;
-                row += " " + tempData;
+                row += "\t" + tempData;
                 break;
         }
     }
