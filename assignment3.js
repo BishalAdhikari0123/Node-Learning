@@ -17,7 +17,7 @@ function isGreater(n1,n2){
         else{
             console.log(`${n2} is greater than ${n1}`);
             }
-            }
+        }
 function calculate(a,b,callback){
         callback(a,b);
     }
