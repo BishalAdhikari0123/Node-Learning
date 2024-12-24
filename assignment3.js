@@ -66,25 +66,29 @@ genericFunction("Bishal","Adhikari",concatenateStrings)
 
 // Task 6: Create a function chainCalculate that takes two numbers and two callbacks. The first callback performs an operation (e.g., addition), and the second callback uses the result to perform another operation (e.g., multiplication by 2).
 
+
+function add(a,b){
+    return a+b;
+}
+function multiResult(a,b,callback){
+    let sum = callback(a,b);
+    return sum*2;
+}
 function chainCalculate(a,b,callback1,callback2){
     let sum = callback1(a,b);
-    let product = callback2(a,b);
+    let product = callback2(a,b,callback1);
     console.log("The sum result is: "+ sum);
-    console.log("The product result is: "+ product);
+    console.log("The product to the result by 2: "+ product);
 
 }
-function add(a,b){
-    return a + b;
 
-}
-function multiply(a,b){
-    return a * b;
-}
-chainCalculate(4,5,add,multiply)
+
+chainCalculate(4,5,add,multiResult)
 
 //Task 7:Write a function delayedMultiply that takes two numbers and a callback function. Use setTimeout to simulate a delay, and after 2 seconds, pass the result of multiplying the two numbers to the callback.
 
 function delayedMultiply (a,b,callback){
+
     setTimeout(()=>{
         let product = a * b;    
         callback(product);
@@ -96,7 +100,9 @@ function multiplyResult(result){
 delayedMultiply(4,5,multiplyResult);
 
 //Task 8:Write a function chooseOperation that takes a string ('add', 'subtract', 'multiply', 'divide') and dynamically assigns one of your predefined calculation functions (like add or subtract) to a callback. Use this callback to calculate the result for two numbers.
-
+function multiply(n1,n2){
+    return n1 * n2;
+}
 function chooseOperation(operationStr,operation,num1,num2){
     operationStr = operation(num1,num2);
     console.log(`The result of the operation is:`+ operationStr);
