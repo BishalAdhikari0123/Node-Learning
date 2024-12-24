@@ -235,7 +235,6 @@ function checkCurrencyExistence(currencyName){
         console.log(currency + " does not exist in the list");
         }
 
-
 //Task 20: Display the cryptocurrency with the earliest found year
 function earliestFoundYear(){
     let earliestYear = cryptoData.currencies[0].foundIn;
