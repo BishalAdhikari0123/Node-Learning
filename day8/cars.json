@@ -1,0 +1,52 @@
+{
+  "cars": [
+    {
+      "name": "Model S",
+      "model": "2023",
+      "manufacturer": "Tesla",
+      "price": 79999
+    },
+    {
+      "name": "Model X",
+      "model": "2021",
+      "manufacturer": "Tesla",
+      "price": 2000000
+    },
+    {
+      "name": "Model X",
+      "model": "2020",
+      "manufacturer": "Tesla",
+      "price": 89999
+    },
+    {
+      "name": "Model X",
+      "model": "2020",
+      "manufacturer": "Tesla",
+      "price": 89999
+    },
+    {
+      "name": "Model X",
+      "model": "2020",
+      "manufacturer": "Tesla",
+      "price": 89999
+    },
+    {
+      "name": "Model X",
+      "model": "2020",
+      "manufacturer": "Tesla",
+      "price": 89999
+    },
+    {
+      "name": "Model X",
+      "model": "2020",
+      "manufacturer": "Tesla",
+      "price": 89999
+    },
+    {
+      "name": "Model X",
+      "model": "2021",
+      "manufacturer": "Tesla",
+      "price": 89999
+    }
+  ]
+}
