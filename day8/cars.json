@@ -1,10 +1,10 @@
 {
   "cars": [
     {
-      "name": "Model S",
-      "model": "2023",
+      "name": "Model y",
+      "model": "2019",
       "manufacturer": "Tesla",
-      "price": 79999
+      "price": "abc"
     },
     {
       "name": "Model X",
@@ -43,10 +43,16 @@
       "price": 89999
     },
     {
-      "name": "Model X",
-      "model": "2021",
+      "name": "Model y",
+      "model": "2019",
       "manufacturer": "Tesla",
-      "price": 89999
+      "price": 2000000
+    },
+    {
+      "name": "Model y",
+      "model": "2019",
+      "manufacturer": "Tesla",
+      "price": 1500000
     }
   ]
 }
