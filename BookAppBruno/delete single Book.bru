@@ -1,0 +1,22 @@
+meta {
+  name: delete single Book
+  type: http
+  seq: 7
+}
+
+delete {
+  url: http://localhost:3002/books/677cc71e9ffd809a5e04525f
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "title": "Pride and Prejudice",
+      "author": "Bishal Adhikari",
+      "publishedYear": "1813-01-01T00:00:00.000Z",
+      "genre": "Romance",
+      "rating": "4.7"
+    }
+  
+}

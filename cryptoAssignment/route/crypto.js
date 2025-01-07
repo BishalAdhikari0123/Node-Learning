@@ -119,7 +119,6 @@ currencyRouter.get(
   }
 );
 
-// Create new metadata with or without currencies
 currencyRouter.post("/", async function (req, res) {
   try { 
     const validationResult = addCurrencySchema.validate(req.body, { abortEarly: false });
@@ -134,7 +133,6 @@ currencyRouter.post("/", async function (req, res) {
   }
 });
 
-// Add metadata without currencies
 currencyRouter.post("/metadata", async function (req, res) {
   try {
     const validationResult = metadataSchema.validate(req.body, { abortEarly: false });
@@ -153,7 +151,6 @@ currencyRouter.post("/metadata", async function (req, res) {
   }
 });
 
-// Middleware for handling single metadata by ID
 const singleCurrencyRouter = Router();
 
 currencyRouter.use(
@@ -212,18 +209,15 @@ currencyRouter.post("/:metadataId/currency", async function (req, res) {
   try {
     const { metadataId } = req.params;
 
-    // Validate the metadataId
     if (!mongoose.Types.ObjectId.isValid(metadataId)) {
       return res.status(400).json({ error: "Invalid metadata ID." });
     }
 
-    // Find the metadata by ID
     const metadata = await CurrencyMetadata.findById(metadataId);
     if (!metadata) {
       return res.status(404).json({ error: "Metadata not found." });
     }
 
-    // Validate currency data
     const { name, exchangeRate, foundIn } = req.body;
     if (!name || !exchangeRate || !foundIn) {
       return res.status(400).json({ error: "Missing required currency fields." });
@@ -233,7 +227,6 @@ currencyRouter.post("/:metadataId/currency", async function (req, res) {
     const newCurrency = { name, exchangeRate, foundIn };
     metadata.currencies.push(newCurrency);
 
-    // Save the updated metadata
     await metadata.save();
 
     return res.status(201).json({ metadata });
@@ -249,18 +242,15 @@ currencyRouter.delete("/:metadataId/currency/:currencyId", async function (req, 
   try {
     const { metadataId, currencyId } = req.params;
 
-    // Validate metadata ID and currency ID
     if (!mongoose.Types.ObjectId.isValid(metadataId) || !mongoose.Types.ObjectId.isValid(currencyId)) {
       return res.status(400).json({ error: "Invalid metadata or currency ID." });
     }
 
-    // Find the metadata by ID
     const metadata = await CurrencyMetadata.findById(metadataId);
     if (!metadata) {
       return res.status(404).json({ error: "Metadata not found." });
     }
 
-    // Find the index of the currency to remove
     const currencyIndex = metadata.currencies.findIndex(
       (currency) => currency._id.toString() === currencyId
     );
@@ -269,10 +259,8 @@ currencyRouter.delete("/:metadataId/currency/:currencyId", async function (req, 
       return res.status(404).json({ error: "Currency not found in the provided metadata." });
     }
 
-    // Remove the currency from the metadata's currencies array
     metadata.currencies.splice(currencyIndex, 1);
 
-    // Save the updated metadata
     await metadata.save();
 
     return res.status(200).json({ message: "Currency deleted successfully." });

@@ -1,0 +1,19 @@
+meta {
+  name: edit Book
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3002/books
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "source": "Kathmandu",
+    "updatedBy": "bishal1"
+  }
+  
+}

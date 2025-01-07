@@ -15,21 +15,20 @@
 // export {addCurrencySchema}
 import Joi from 'joi';
 
-// Validation schema for metadata (without currencies)
 const metadataSchema = Joi.object({
   date: Joi.date().required(),
   source: Joi.string().min(3).required(),
   updatedBy: Joi.string().min(4).required(),
 });
 
-// Validation schema for a single currency
+// Validate currency
 const singleCurrencySchema = Joi.object({
   name: Joi.string().min(3).max(20).required(),
   exchangeRate: Joi.number().min(0).required(),
   foundIn: Joi.date().min('1900-01-01').required(),
 });
 
-// Validation schema for full metadata (including currencies)
+// Validate full metadata
 const addCurrencySchema = Joi.object({
   date: Joi.date().required(),
   source: Joi.string().min(3).required(),

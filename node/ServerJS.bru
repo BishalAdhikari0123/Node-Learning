@@ -5,7 +5,16 @@ meta {
 }
 
 get {
-  url: http://localhost:3000/views/increase
-  body: none
+  url: http://localhost:3001/currencies/677a9734a3887027018a7364/
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "dollar",
+    "exchangeRate": 2,
+    "foundIn": "2010-01-01"
+  }
+  
 }
